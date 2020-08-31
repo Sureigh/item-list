@@ -10,10 +10,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
-    <title>Hodl's Item List</title>
+    <title>Sleigh's Full Item List</title>
     <script type="text/javascript">
-        const itemListURL = "https://raw.githubusercontent.com/twitchtoolkit/item-list/master/StoreItems.json";
-        const eventListURL = "https://raw.githubusercontent.com/twitchtoolkit/item-list/master/StoreEvents.json";
+        const itemListURL = "https://raw.githubusercontent.com/Sureigh/sleigh-rw-item-list/master/StoreItems.json";
+        const eventListURL = "https://raw.githubusercontent.com/Sureigh/sleigh-rw-item-list/master/StoreEvents.json";
     </script>
 </head>
 
@@ -29,7 +29,7 @@
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://www.twitch.tv/hodlhodl">My Stream</a>
+                    <a class="nav-link" href="https://www.twitch.tv/sureigh">Click here for Sleigh's stream</a>
                 </li>
             </ul>
         </div>
@@ -37,22 +37,35 @@
     <main role="main">
         <div class="jumbotron">
             <div class="container">
-                <h1 class="display-3">TwitchToolkit</h1>
-                <p>TwitchToolkit is a mod written by Twitch.tv/hodlhodl that integrates storytelling decisions into chat votes, awards viewers coins for watching, and those coins can be spent on items/events in game.</p>
+                <h1 class="display-3">Sleigh's modded RW item/event list</h1>
+                <p>Here's a list of all items you can purchase using coins on the RimWorld stream.<br><br>
+		   Page (poorly) edited by <a href="https://twitch.tv/sureigh/">Sleigh</a>, originally made by Hodl (Creator of TwitchToolkit).</p>
+		<h2>User commands</h2>
+		<p>A list of general commands, relating to item/event purchasing, coin balance, an explanation on the karma system, etc.</p>
                 <ul class="list-group">
-                    <li class="list-group-item">!bal - check balance and karma rate</li>
-                    <li class="list-group-item">!buy - Syntax: !buy beer 6 - purchase an item or event</li>
-                    <li class="list-group-item">!whatiskarma - explains what the karma system is</li>
-                    <li class="list-group-item">!purchaselist - gives users a link to the public purchase list</li>
-                    <li class="list-group-item">!instructions - gives users info on using the mod</li>
-                    <li class="list-group-item">!modinfo - gives users info about the mod</li>
-                    <li class="list-group-item">!modsettings - gives user info on how many coins are being earned and global settings</li>
-                    <li class="list-group-item">!giftcoins - Syntax: !giftcoins @username 100 - give another viewer your coins</li>
-                    <li class="list-group-item">!toolkitcmds - shows all available commands to the user, this does not translate by default so it can be universally recognized.</li>
-                    <li class="list-group-item">!buy ticket - join the viewer name queue</li>
-                    <li class="list-group-item">!mypawnstory - view information about your pawns backstory</li>
-                    <li class="list-group-item">!mypawnskills - view information about your pawns skills</li>
+			<li class="list-group-item"><b>!bal</b> - Check coin balance and karma.</li>
+                    	<li class="list-group-item"><b>!buy (item name) (amount)</b> - Purchase an item or event.</li>
+                    	<li class="list-group-item"><b>!whatiskarma</b> - Explains what the karma system is.</li>
+                    	<li class="list-group-item"><b>!purchaselist</b> - Gives users a link to the public purchase list.</li>
+                   	<li class="list-group-item"><b>!instructions</b> - Gives users info on using TwitchToolkit.</li>
+                   	<li class="list-group-item"><b>!modinfo</b> - Gives users info about TwitchToolkit.</li>
+                    	<li class="list-group-item"><b>!modsettings</b> - Gives user info on how many coins are being earned and global settings.</li>
+                    	<li class="list-group-item"><b>!giftcoins @(twitch username) (amount)</b> - Give another Twitch viewer X amount of coins.</li>
+                    	<li class="list-group-item"><b>!toolkitcmds</b> - Shows all available commands to the user.</li>
+		    	<li class="list-group-item"><b>!lookup (event/item name)</b> - Search all the items/events according to your search term.</li>
                 </ul>
+		<h2>Colonist commands</h2>
+		<p>A list of commands relating to the purchasing or upgrading of your custom colonist.</p>
+		<u1 class="list-group">
+			<li class="list-group-item"><b>!buy ticket</b> - Join the viewer name queue to create a custom colonist.</li>
+		    	<li class="list-group-item"><b>!joinqueue</b> - If !buy ticket doesn't work.</li>
+		    	<li class="list-group-item"><b>!mypawnstory</b> - View information about your colonist's backstory.</li>
+                    	<li class="list-group-item"><b>!mypawnskills</b> - View information about your colonist's skills.</li>
+		    	<li class="list-group-item"><b>!buy removetrait (trait name)</b> - Removes this trait from your colonist.</li>
+                    	<li class="list-group-item"><b>!buy trait (trait name)</b> - Adds this trait to your colonist.</li>
+		    	<li class="list-group-item"><b>!levelskill (skill name) (coins)</b> - Spends X amount of coins to level a certain skill.</li>
+                    	<li class="list-group-item"><b>!mypawnskills</b> - View information about your colonist's skills.</li>
+		</u1>
             </div>
         </div>
         <div ng-app='tabs' ng-controller='tabCtrl'>
@@ -70,7 +83,7 @@
                                     </button>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label" for="">Price Between:</label>
+                                    <label class="col-sm-2 col-form-label" for="">Price between:</label>
                                     <div class="col-sm-2">
                                         <input type="number" class="form-control" id="item-price-min" placeholder="0">
                                     </div>
@@ -96,7 +109,7 @@
                                     Sort
                                 </button>
                                 <button type="button" class="btn btn-primary sort" data-sort="price">
-                                    Sort by Price
+                                    Sort by price
                                 </button>
                             </p>
                             <table class="table items">
